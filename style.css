@@ -125,11 +125,11 @@ section.second {
 
 /* THIRD SECTION */
 .Horizontal-container {
-  height: 100vh;
+  height: 100lvh;
   width: fit-content;
   display: flex;
   flex-wrap: nowrap;
-  padding: 40px 5vw;
+  padding: 40px 40px;
   overflow-y: hidden;
 }
 
@@ -744,10 +744,6 @@ p.about-me {
 
   .contact-button button {
     font-size: 14px;
-  }
-
-  .Horizontal-container {
-    height: 100dvh;
   }
 
   .horizontal-first-wrapper .top-images {
