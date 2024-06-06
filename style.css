@@ -616,7 +616,7 @@ p.about-me {
 
 .testimonials .box {
   box-shadow: 0 10px 30px rgba(13, 1, 32, 0.05);
-  padding: 20px;
+  padding: 20px 40px;
   border-radius: 15px;
   margin-bottom: 40px;
   margin-top: 20px;
@@ -679,7 +679,6 @@ p.about-me {
   font-size: 17px;
   line-height: 30px;
   margin: 20px 0;
-  padding: 20px 40px;
   word-spacing: 1px;
   position: relative;
 }
@@ -687,8 +686,8 @@ p.about-me {
 .box-bottom::before {
   content: "“";
   position: absolute;
-  top: 40px;
-  left: -30px;
+  top: 20px;
+  left: -60px;
   font-size: 120px;
   color: #02a2c4;
   font-family: "Alef", sans-serif;
@@ -699,13 +698,14 @@ p.about-me {
 .box-bottom::after {
   content: '"';
   position: absolute;
-  right: 0px;
+  right: -40px;
+  bottom: -50px;
   font-size: 120px;
   color: #02a2c4;
   font-family: "Alef", sans-serif;
   font-weight: 700;
   font-style: normal;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 /* EIGHTH SECTION */
@@ -835,7 +835,7 @@ p.about-me {
   }
 
   .about-me-container {
-    padding: 15px;
+    padding: 20px;
   }
 
   p.about-me {
@@ -844,6 +844,10 @@ p.about-me {
 
   .about-me b {
     font-size: 16px;
+  }
+
+  .testimonials .box {
+    padding: 20px;
   }
 
   .testimonials .box h3 {
@@ -863,6 +867,10 @@ p.about-me {
 
   .Seperator {
     height: 60px;
+  }
+
+  .testimonials .box:hover {
+    animation: none;
   }
 
   .highlights-content h1 {
