@@ -14,20 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return window.matchMedia("(min-width: 900px)").matches;
   }
 
-  function updatePinSpacerHeight() {
-    const pinSpacer = document.querySelector(".pin-spacer");
-    if (pinSpacer) {
-      const viewportHeight = window.innerHeight;
-      pinSpacer.style.height = `${viewportHeight}px`;
-    }
-  }
-
-  window.addEventListener("resize", () => {
-    updatePinSpacerHeight();
-  });
-
-  updatePinSpacerHeight();
-
   // horizonal scroll
   const horizontalContainer = document.querySelector(".Horizontal-container");
 
@@ -48,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   ScrollTrigger.create({
     trigger: ".Horizontal",
-    start: "top top",
+    start: "top 0%",
     end: () => `+=${getScrollAmount() * -1}`,
     pin: true,
     animation: tween,

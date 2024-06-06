@@ -10,7 +10,6 @@
 }
 
 :root {
-  --dynamic-height: 100dvh;
   --contrast-color: #0a1392;
   --dark-contrast-color: #180851;
 }
@@ -102,14 +101,8 @@ section.second {
 }
 
 /* THIRD SECTION */
-.Horizontal {
-  display: flex;
-  flex-direction: column;
-  height: var(--dynamic-height);
-}
-
 .Horizontal-container {
-  height: var(--dynamic-height);
+  height: 100lvh;
   width: fit-content;
   display: flex;
   flex-wrap: nowrap;
