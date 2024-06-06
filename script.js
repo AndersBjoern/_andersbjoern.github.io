@@ -61,8 +61,13 @@ document.addEventListener("DOMContentLoaded", function () {
         dynamicHeight
       );
 
-      // Sæt højde for forældreelementet også
-      document.querySelector(".Horizontal").style.height = dynamicHeight;
+      // Opdater forældre- og barnelementets højde
+      const horizontalElement = document.querySelector(".Horizontal");
+      const horizontalContainer = document.querySelector(
+        ".Horizontal-container"
+      );
+      horizontalElement.style.height = dynamicHeight;
+      horizontalContainer.style.height = dynamicHeight;
     }
 
     // Kald funktionen når siden indlæses
@@ -91,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     ScrollTrigger.create({
       trigger: ".Horizontal",
-      start: "top 0%",
+      start: "top top",
       end: () => `+=${getScrollAmount() * -1}`,
       pin: true,
       animation: tween,
@@ -198,8 +203,13 @@ document.addEventListener("DOMContentLoaded", function () {
         dynamicHeight
       );
 
-      // Sæt højde for forældreelementet også
-      document.querySelector(".Horizontal").style.height = dynamicHeight;
+      // Opdater forældre- og barnelementets højde
+      const horizontalElement = document.querySelector(".Horizontal");
+      const horizontalContainer = document.querySelector(
+        ".Horizontal-container"
+      );
+      horizontalElement.style.height = dynamicHeight;
+      horizontalContainer.style.height = dynamicHeight;
     }
 
     // Kald funktionen når siden indlæses
@@ -228,7 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     ScrollTrigger.create({
       trigger: ".Horizontal",
-      start: "top top",
+      start: "top 0%",
       end: () => `+=${getScrollAmount() * -1}`,
       pin: true,
       animation: tween,
