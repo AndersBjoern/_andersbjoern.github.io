@@ -10,6 +10,61 @@
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", function () {
+  function isComputer() {
+    return window.matchMedia("(min-width: 900px)").matches;
+  }
+
+  function updatePinSpacerHeight() {
+    const pinSpacer = document.querySelector(".pin-spacer");
+    if (pinSpacer) {
+      const viewportHeight = window.innerHeight;
+      pinSpacer.style.height = `${viewportHeight}px`;
+    }
+  }
+
+  window.addEventListener("resize", () => {
+    updatePinSpacerHeight();
+  });
+
+  updatePinSpacerHeight();
+
+  // horizonal scroll
+  const horizontalContainer = document.querySelector(".Horizontal-container");
+
+  function getScrollAmount() {
+    let horizontalContainerWidth = horizontalContainer.scrollWidth;
+    return -(horizontalContainerWidth - window.innerWidth);
+  }
+
+  const tween = gsap.to(horizontalContainer, {
+    x: getScrollAmount,
+    duration: 3,
+    ease: "none",
+  });
+
+  const root = document.documentElement;
+  const contrastColor =
+    getComputedStyle(root).getPropertyValue("--contrast-color");
+
+  ScrollTrigger.create({
+    trigger: ".Horizontal",
+    start: "top top",
+    end: () => `+=${getScrollAmount() * -1}`,
+    pin: true,
+    animation: tween,
+    scrub: 1,
+    invalidateOnRefresh: true,
+    onEnter: () => {
+      gsap.to(horizontalContainer, {
+        background: `linear-gradient(90deg, rgba(2,0,36,0.695203081232493) 24%, rgba(21,9,100,1) 50%, ${contrastColor} 84%)`,
+        duration: 0.5,
+      });
+    },
+    onLeaveBack: () => {
+      gsap.to(horizontalContainer, { background: "none", duration: 0.5 });
+    },
+  });
+
   // "skills" animation:
   const addAnimation = () => {
     scrollers.forEach((scroller) => {
@@ -46,107 +101,43 @@ document.addEventListener("DOMContentLoaded", function () {
     addAnimation();
   }
 
-  function isTabletOrLarger() {
-    return window.matchMedia("(min-width: 900px)").matches;
-  }
+  const skillsSection = document.querySelector(".highlights");
+  const blackBackground = document.querySelector(".black-background");
+  const body = document.body;
+
+  const startValue = isComputer() ? "top top" : "top center";
+
+  // Opret en ScrollTrigger
+  ScrollTrigger.create({
+    trigger: skillsSection,
+    start: "top center", // Justér dette efter dine behov
+    end: "bottom center", // Justér dette efter dine behov
+    onEnter: () => {
+      // Animation, når sektionen er i visning
+      gsap.to(body, { backgroundColor: "white", duration: 1 });
+      gsap.to(blackBackground, {
+        color: "white",
+        width: "95vw",
+        borderTopRightRadius: "40px",
+        borderBottomRightRadius: "40px",
+        duration: 1,
+      });
+    },
+    onLeaveBack: () => {
+      // Animation, når sektionen forlader visning
+      gsap.to(body, { backgroundColor: "black", duration: 1 });
+      gsap.to(blackBackground, {
+        color: "black",
+        width: "100vw",
+        borderTopRightRadius: "0",
+        borderBottomRightRadius: "0",
+        duration: 1,
+      });
+    },
+  });
 
   // Kør koden kun hvis skærmen er en tablet eller større
-  if (isTabletOrLarger()) {
-    // horizonal scroll
-    function setDynamicHeight() {
-      let vh = window.innerHeight * 0.01;
-      let dynamicHeight = `${vh * 100}px`;
-      document.documentElement.style.setProperty(
-        "--dynamic-height",
-        dynamicHeight
-      );
-
-      // Opdater forældre- og barnelementets højde
-      const horizontalElement = document.querySelector(".Horizontal");
-      const horizontalContainer = document.querySelector(
-        ".Horizontal-container"
-      );
-      horizontalElement.style.height = dynamicHeight;
-      horizontalContainer.style.height = dynamicHeight;
-    }
-
-    // Kald funktionen når siden indlæses
-    setDynamicHeight();
-
-    // Kald funktionen igen, når vinduets størrelse ændres
-    window.addEventListener("resize", setDynamicHeight);
-
-    // Resten af din GSAP og ScrollTrigger kode
-    const horizontalContainer = document.querySelector(".Horizontal-container");
-
-    function getScrollAmount() {
-      let horizontalContainerWidth = horizontalContainer.scrollWidth;
-      return -(horizontalContainerWidth - window.innerWidth);
-    }
-
-    const tween = gsap.to(horizontalContainer, {
-      x: getScrollAmount,
-      duration: 3,
-      ease: "none",
-    });
-
-    const root = document.documentElement;
-    const contrastColor =
-      getComputedStyle(root).getPropertyValue("--contrast-color");
-
-    ScrollTrigger.create({
-      trigger: ".Horizontal",
-      start: "top top",
-      end: () => `+=${getScrollAmount() * -1}`,
-      pin: true,
-      animation: tween,
-      scrub: 1,
-      invalidateOnRefresh: true,
-      onEnter: () => {
-        gsap.to(horizontalContainer, {
-          background: `linear-gradient(90deg, rgba(2,0,36,0.695203081232493) 24%, rgba(21,9,100,1) 50%, ${contrastColor} 84%)`,
-          duration: 0.5,
-        });
-      },
-      onLeaveBack: () => {
-        gsap.to(horizontalContainer, { background: "none", duration: 0.5 });
-      },
-    });
-
-    // highligst i bunden
-    const skillsSection = document.querySelector(".highlights");
-    const blackBackground = document.querySelector(".black-background");
-    const body = document.body;
-
-    // Opret en ScrollTrigger
-    ScrollTrigger.create({
-      trigger: skillsSection,
-      start: "top center", // Justér dette efter dine behov
-      end: "bottom center", // Justér dette efter dine behov
-      onEnter: () => {
-        // Animation, når sektionen er i visning
-        gsap.to(body, { backgroundColor: "white", duration: 1 });
-        gsap.to(blackBackground, {
-          color: "white",
-          width: "95vw",
-          borderTopRightRadius: "40px",
-          borderBottomRightRadius: "40px",
-          duration: 1,
-        });
-      },
-      onLeaveBack: () => {
-        // Animation, når sektionen forlader visning
-        gsap.to(body, { backgroundColor: "black", duration: 1 });
-        gsap.to(blackBackground, {
-          color: "black",
-          width: "100vw",
-          borderTopRightRadius: "0",
-          borderBottomRightRadius: "0",
-          duration: 1,
-        });
-      },
-    });
-
+  if (isComputer()) {
     // grid zoom effekt
     var gridItems = document.querySelectorAll(".grid-item");
     var gridContainer = document.querySelector(".sticky-container");
@@ -192,101 +183,6 @@ document.addEventListener("DOMContentLoaded", function () {
         x: translateX,
         y: translateY,
       });
-    });
-  } else {
-    // horizonal scroll
-    function setDynamicHeight() {
-      let vh = window.innerHeight * 0.01;
-      let dynamicHeight = `${vh * 100}px`;
-      document.documentElement.style.setProperty(
-        "--dynamic-height",
-        dynamicHeight
-      );
-
-      // Opdater forældre- og barnelementets højde
-      const horizontalElement = document.querySelector(".Horizontal");
-      const horizontalContainer = document.querySelector(
-        ".Horizontal-container"
-      );
-      horizontalElement.style.height = dynamicHeight;
-      horizontalContainer.style.height = dynamicHeight;
-    }
-
-    // Kald funktionen når siden indlæses
-    setDynamicHeight();
-
-    // Kald funktionen igen, når vinduets størrelse ændres
-    window.addEventListener("resize", setDynamicHeight);
-
-    // Resten af din GSAP og ScrollTrigger kode
-    const horizontalContainer = document.querySelector(".Horizontal-container");
-
-    function getScrollAmount() {
-      let horizontalContainerWidth = horizontalContainer.scrollWidth;
-      return -(horizontalContainerWidth - window.innerWidth);
-    }
-
-    const tween = gsap.to(horizontalContainer, {
-      x: getScrollAmount,
-      duration: 3,
-      ease: "none",
-    });
-
-    const root = document.documentElement;
-    const contrastColor =
-      getComputedStyle(root).getPropertyValue("--contrast-color");
-
-    ScrollTrigger.create({
-      trigger: ".Horizontal",
-      start: "top 0%",
-      end: () => `+=${getScrollAmount() * -1}`,
-      pin: true,
-      animation: tween,
-      scrub: 1,
-      invalidateOnRefresh: true,
-      onEnter: () => {
-        gsap.to(horizontalContainer, {
-          background: `linear-gradient(90deg, rgba(2,0,36,0.695203081232493) 24%, rgba(21,9,100,1) 50%, ${contrastColor} 84%)`,
-          duration: 0.5,
-        });
-      },
-      onLeaveBack: () => {
-        gsap.to(horizontalContainer, { background: "none", duration: 0.5 });
-      },
-    });
-
-    // highligst i bunden
-    const skillsSection = document.querySelector(".highlights");
-    const blackBackground = document.querySelector(".black-background");
-    const body = document.body;
-
-    // Opret en ScrollTrigger
-    ScrollTrigger.create({
-      trigger: skillsSection,
-      start: "top bottom", // Justér dette efter dine behov
-      end: "bottom center", // Justér dette efter dine behov
-      onEnter: () => {
-        // Animation, når sektionen er i visning
-        gsap.to(body, { backgroundColor: "white", duration: 1 });
-        gsap.to(blackBackground, {
-          color: "white",
-          width: "95vw",
-          borderTopRightRadius: "40px",
-          borderBottomRightRadius: "40px",
-          duration: 1,
-        });
-      },
-      onLeaveBack: () => {
-        // Animation, når sektionen forlader visning
-        gsap.to(body, { backgroundColor: "black", duration: 1 });
-        gsap.to(blackBackground, {
-          color: "black",
-          width: "100vw",
-          borderTopRightRadius: "0",
-          borderBottomRightRadius: "0",
-          duration: 1,
-        });
-      },
     });
   }
 });
