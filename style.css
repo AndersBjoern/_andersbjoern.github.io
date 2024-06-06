@@ -125,6 +125,11 @@ section.second {
 }
 
 /* THIRD SECTION */
+.Horizontal {
+  height: var(
+    --dynamic-height
+  ); /* Brug samme CSS-variabel for at sikre, at højden følger */
+}
 .Horizontal-container {
   height: var(--dynamic-height);
   width: fit-content;

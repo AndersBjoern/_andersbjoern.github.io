@@ -53,6 +53,25 @@ document.addEventListener("DOMContentLoaded", function () {
   // Kør koden kun hvis skærmen er en tablet eller større
   if (isTabletOrLarger()) {
     // horizonal scroll
+    function setDynamicHeight() {
+      let vh = window.innerHeight * 0.01;
+      let dynamicHeight = `${vh * 100}px`;
+      document.documentElement.style.setProperty(
+        "--dynamic-height",
+        dynamicHeight
+      );
+
+      // Sæt højde for forældreelementet også
+      document.querySelector(".Horizontal").style.height = dynamicHeight;
+    }
+
+    // Kald funktionen når siden indlæses
+    setDynamicHeight();
+
+    // Kald funktionen igen, når vinduets størrelse ændres
+    window.addEventListener("resize", setDynamicHeight);
+
+    // Resten af din GSAP og ScrollTrigger kode
     const horizontalContainer = document.querySelector(".Horizontal-container");
 
     function getScrollAmount() {
@@ -173,10 +192,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // horizonal scroll
     function setDynamicHeight() {
       let vh = window.innerHeight * 0.01;
+      let dynamicHeight = `${vh * 100}px`;
       document.documentElement.style.setProperty(
         "--dynamic-height",
-        `${vh * 100}px`
+        dynamicHeight
       );
+
+      // Sæt højde for forældreelementet også
+      document.querySelector(".Horizontal").style.height = dynamicHeight;
     }
 
     // Kald funktionen når siden indlæses
@@ -205,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     ScrollTrigger.create({
       trigger: ".Horizontal",
-      start: "top 0%",
+      start: "top top",
       end: () => `+=${getScrollAmount() * -1}`,
       pin: true,
       animation: tween,
