@@ -171,6 +171,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   } else {
     // horizonal scroll
+    function setDynamicHeight() {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty(
+        "--dynamic-height",
+        `${vh * 100}px`
+      );
+    }
+
+    // Kald funktionen når siden indlæses
+    setDynamicHeight();
+
+    // Kald funktionen igen, når vinduets størrelse ændres
+    window.addEventListener("resize", setDynamicHeight);
+
+    // Resten af din GSAP og ScrollTrigger kode
     const horizontalContainer = document.querySelector(".Horizontal-container");
 
     function getScrollAmount() {
@@ -190,7 +205,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     ScrollTrigger.create({
       trigger: ".Horizontal",
-      start: "top top",
+      start: "top 0%",
       end: () => `+=${getScrollAmount() * -1}`,
       pin: true,
       animation: tween,

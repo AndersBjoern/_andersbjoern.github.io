@@ -10,6 +10,7 @@
 }
 
 :root {
+  --dynamic-height: 100vh;
   --contrast-color: #0a1392;
   --dark-contrast-color: #180851;
 }
@@ -125,11 +126,12 @@ section.second {
 
 /* THIRD SECTION */
 .Horizontal-container {
-  height: 100lvh;
+  height: var(--dynamic-height);
   width: fit-content;
   display: flex;
   flex-wrap: nowrap;
   padding: 40px 40px;
+  padding-left: 5vw;
   overflow-y: hidden;
 }
 
@@ -352,7 +354,7 @@ section.second {
   grid-template-areas:
     "top-left top-right top-right"
     "bottom-left bottom-left bottom-right";
-  width: clamp(500px, 110vw, 1200px);
+  width: clamp(800px, 110vw, 1200px);
 }
 
 .top-left {
@@ -547,7 +549,7 @@ section.second {
 }
 
 .numbers h3 {
-  font-size: 50px;
+  font-size: clamp(30px, 6vw, 50px);
   font-weight: 900;
 }
 
