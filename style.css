@@ -688,7 +688,7 @@ p.about-me {
   position: absolute;
   top: 20px;
   left: -60px;
-  font-size: 120px;
+  font-size: 5.5vw;
   color: #02a2c4;
   font-family: "Alef", sans-serif;
   font-weight: 700;
@@ -700,7 +700,7 @@ p.about-me {
   position: absolute;
   right: -40px;
   bottom: -50px;
-  font-size: 120px;
+  font-size: 5.5vw;
   color: #02a2c4;
   font-family: "Alef", sans-serif;
   font-weight: 700;
@@ -865,12 +865,23 @@ p.about-me {
     word-spacing: 1px;
   }
 
-  .Seperator {
-    height: 60px;
+  .box-bottom::before {
+    top: 20px;
+    left: -35px;
+    font-size: 60px;
   }
 
+  .box-bottom::after {
+    right: -20px;
+    bottom: -40px;
+    font-size: 60px;
+  }
   .testimonials .box:hover {
     animation: none;
+  }
+
+  .Seperator {
+    height: 60px;
   }
 
   .highlights-content h1 {
