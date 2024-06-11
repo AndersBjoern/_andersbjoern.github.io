@@ -102,7 +102,6 @@ section.second {
 
 /* THIRD SECTION */
 .Horizontal-container {
-  height: 100lvh;
   width: fit-content;
   display: flex;
   flex-wrap: nowrap;
@@ -111,7 +110,7 @@ section.second {
 }
 
 .Horizontal-container > div {
-  height: 100%;
+  height: calc(100dvh - 80px);
 }
 
 .Horizontal-container > div:not(:first-child) {

@@ -7,9 +7,8 @@
 //! contact button effect
 //! store og små bogstaver i classes, forenkling af divs og classes
 
-gsap.registerPlugin(ScrollTrigger);
-
 document.addEventListener("DOMContentLoaded", function () {
+  gsap.registerPlugin(ScrollTrigger);
   function isComputer() {
     return window.matchMedia("(min-width: 900px)").matches;
   }
