@@ -4,17 +4,42 @@
 //! text animation (50% ----> 75% VR training) & lego: Digital Empowerment black color white outline
 //! background color
 //! icons
-//! contact button effect
-//! store og små bogstaver i classes, forenkling af divs og classes
 
 document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger);
+
+  var text = document.querySelector("h1"),
+    char = text.querySelectorAll("span"),
+    replaceChar = text.querySelectorAll('span:not([data-char="."])');
+
+  var tl = gsap.timeline();
+
+  tl.set(char, {
+    yPercent: -110,
+  });
+  tl.set(text, {
+    autoAlpha: 1,
+  });
+  tl.to(char, {
+    duration: 1,
+    yPercent: 0,
+    stagger: 0.05,
+    ease: "expo.inOut",
+  }).to(replaceChar, {
+    duration: 1,
+    yPercent: 110,
+    ease: "expo.inOut",
+    repeat: -1,
+    yoyo: true,
+    stagger: 0.1,
+  });
+
   function isComputer() {
-    return window.matchMedia("(min-width: 900px)").matches;
+    return window.matchMedia("(min-width: 902px)").matches;
   }
 
   // horizonal scroll
-  const horizontalContainer = document.querySelector(".Horizontal-container");
+  const horizontalContainer = document.querySelector(".horizontal-section");
 
   function getScrollAmount() {
     let horizontalContainerWidth = horizontalContainer.scrollWidth;
@@ -32,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     getComputedStyle(root).getPropertyValue("--contrast-color");
 
   ScrollTrigger.create({
-    trigger: ".Horizontal",
+    trigger: ".horizontal",
     start: "top 0%",
     end: () => `+=${getScrollAmount() * -1}`,
     pin: true,
@@ -81,12 +106,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   */
 
-  const scrollers = document.querySelectorAll(".scroller");
+  const scrollers = document.querySelectorAll(".skills-scroller");
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     addAnimation();
   }
 
-  const skillsSection = document.querySelector(".highlights");
+  const skillsSection = document.querySelector(".highlights-section");
   const blackBackground = document.querySelector(".black-background");
   const body = document.body;
 

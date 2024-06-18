@@ -1,0 +1,26 @@
+.videoplayer-section {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .videoplayer-section {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .videoplayer-section-wrapper {
+    width: 100%;
+    background-color: #e8e7ed;
+    border-radius: 20px;
+    padding: 5px 5px 0px 5px;
+    border-radius: 12px;
+  }
+
+  .videoplayer {
+    aspect-ratio: 16/9;
+    width: 100%;
+  }
+}

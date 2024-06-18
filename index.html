@@ -1,392 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="scss/style.css" />
     <script src="https://unpkg.co/gsap@3/dist/gsap.min.js" defer></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+    <script
+      src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"
+      defer
+    ></script>
     <script src="script.js" defer></script>
     <title>Anders Bjørn</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
+      <section class="landing-section padding">
+        <h2>Anders Bjørn Øbro</h2>
+        <h1>
+          <span data-char="P">P</span>
+          <span data-char="R">R</span>
+          <span data-char="O">O</span>
+          <span data-char="D">D</span>
+          <span data-char="U">U</span>
+          <span data-char="C">C</span>
+          <span data-char="T">T</span>
+          <span data-char=" "> </span>
+          <span data-char="D">D</span>
+          <span data-char="E">E</span>
+          <span data-char="S">S</span>
+          <span data-char="I">I</span>
+          <span data-char="G">G</span>
+          <span data-char="N">N</span>
+          <span data-char="E">E</span>
+          <span data-char="R">R</span>
+        </h1>
+        <h3>Engineer in Game Design and Learning Technology</h3>
+        <div class="contact-button">
+          <a href="mailto:andersbj1@gmail.com">
+            <button><span></span>Let's grap a cup of coffee &nbsp;☕️</button>
+          </a>
+        </div>
+      </section>
 
-        <section class="first padding">
-            <h2>Anders Bjørn Øbro</h2>
-            <h1>Product Designer</h1>
-            <h3>Engineer in Game Design and Learning Technology</h3>
-            <div class="contact-button">
-                <a href="mailto:andersbj1@gmail.com">
-                    <button>
-                        Let's grap a cup of coffee ☕️
-                    </button>
-                </a>
+      <section class="videoplayer-section padding">
+        <div class="videoplayer-section-wrapper">
+          <div class="videoplayer">
+            <iframe
+              src="https://drive.google.com/file/d/1qZv9n6s_m2gPhee1u3YgaZpqyW_uKTMq/preview"
+              width="100%"
+              height="100%"
+              allow="autoplay"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="horizontal">
+        <div class="horizontal-section">
+          <div class="large-full-size show-on-computer">
+            <div class="img-container-wrapper">
+              <div class="img-container">
+                <iframe
+                  src="https://drive.google.com/file/d/1qZv9n6s_m2gPhee1u3YgaZpqyW_uKTMq/preview"
+                  width="100%"
+                  height="100%"
+                  allow="autoplay"
+                ></iframe>
+              </div>
             </div>
-        </section>
-
-        <section class="second padding">
-            <div class="second-section-video-wrapper">
-                <div class="videoplayer">
-                    <iframe src="https://drive.google.com/file/d/1qZv9n6s_m2gPhee1u3YgaZpqyW_uKTMq/preview" 
-                    width="100%" 
-                    height="100%" 
-                    allow="autoplay"></iframe>
+          </div>
+          <div class="lego-wrapper">
+            <div class="lego-images">
+              <div class="top-image">
+                <div class="img-container">
+                  <div class="hover-text">
+                    <p>The game taught about critical thinking</p>
+                  </div>
+                  <img src="Images/legoForside.jpg" alt="" />
                 </div>
-            </div>
-        </section>
-    
-        <section class="Horizontal">
-            <div class="Horizontal-container">
-                    <div class="Product-showcase show-on-computer">
-                        <div class="img-container-wrapper">
-                            <div class="img-container">
-                                <iframe src="https://drive.google.com/file/d/1qZv9n6s_m2gPhee1u3YgaZpqyW_uKTMq/preview" 
-                                    width="100%" 
-                                    height="100%" 
-                                    allow="autoplay"></iframe>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="horizontal-first-wrapper">
-                        <div class="top-images">
-                            <div class="top-image">
-                                <div class="img-container">    
-                                    <div class="hover-text">
-                                        <p>The game taught about critical thinking</p>
-                                    </div>
-                                    <img src="Images/legoForside.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="top-image">
-                                <div class="img-container">
-                                    <div class="hover-text">
-                                        <p>Through the game, children can learn skills that can be used on social media</p>
-                                    </div>
-                                    <img src="Images/legoTest.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bottom-text">
-                            <div class="bottom-text-left">
-                                <img src="Images/LEGO_logo.png" alt="">
-                            </div>
-                            <div class="bottom-text-right">
-                                <h3>
-                                    DIGITAL EMPOWERMENT
-                                </h3>
-                                <p>
-                                    The project involved developing a digital game that taught children to navigate digital platforms safely and critically, while enhancing their digital skills and mental well-being.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="horizontal-three-wrapper">
-                        <div class="image-container">
-                            <div class="img-container">    
-                                <div class="hover-text">
-                                    <p>I co-created the entire project</p>
-                                </div>
-                                <img src="Images/legoModelling.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="image-container">
-                            <div class="img-container">    
-                                <div class="hover-text">
-                                    <p>The game combines learning and entertainment</p>
-                                </div>
-                                <img src="Images/legoIsland.png" alt="">
-                            </div>
-                        </div>
-                        <div class="image-container">
-                            <div class="img-container">    
-                                <div class="hover-text">
-                                    <p>If the players are critical they can create harmony in Legoria</p>
-                                </div>
-                                <img src="Images/legoEnding.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <!--
-                    <div class="Product-showcase first-showcase">
-                        <div class="img-container-wrapper">
-                            <div class="img-container">    
-                                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/JlKYkf6bF30?si=a3KX0LrJ5UAaOuFm&t=9" frameborder="0" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                    -->
-                    <div class="project-seperation">
-                        <div class="seperation"></div>
-                    </div>
-                    <!--
-                    <div class="vertical-Product-description">
-                        <div class="container-Product-description">
-
-                            <div class="top-description">
-                                <h5>LEGO Games</h5>
-                                <h4>Responsible Gaming</h4>
-                            </div>
-                            <div class="content-description">
-                                <p>
-                                    
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    -->
-                    <div class="Product-showcase">
-                        <div class="img-container-wrapper">
-                            <div class="img-container">   
-                                <div class="hover-text">
-                                    <p>Moesgaard Museum | 2023 project | Digital game for families with children</p>
-                                </div> 
-                                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6tctAC3cPnU" frameborder="0" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="two-row-Product-Showcase">
-                        <div class="img-container-wrapper">
-                            <div class="img-container">  
-                                <div class="hover-text">
-                                    <p>Project handed over in january 2024</p>
-                                </div>  
-                                <img src="Images/momuTeam.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="img-container-wrapper">
-                            <div class="img-container"> 
-                                <div class="hover-text">
-                                    <p>Paper-prototype before the digital product</p>
-                                </div>   
-                                <img src="Images/momuTest.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-seperation">
-                        <div class="seperation"></div>
-                    </div>
-                    <!--
-                    <div class="vertical-Product-description">
-                        <div class="container-Product-description">
-
-                            <div class="top-description">
-                                <h5>Moesgaard Museum</h5>
-                                <h4></h4>
-                            </div>
-                            <div class="content-description">
-                                <p>
-                                    
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    -->
-                    <div class="Grid-Product-showcase">
-                        <div class="top-left img-container-wrapper">
-                            <div class="img-container">  
-                                <div class="hover-text">
-                                    <p>Bachelorproject: Simulation based training</p>
-                                </div>  
-                                <img id="pdpImg" src="Images/PDP.jpeg" alt="">
-                            </div>
-                        </div>
-                        <div class="top-right img-container-wrapper">
-                            <div class="img-container">  
-                                <div class="hover-text">
-                                    <p>Developed the initial design for their upcomming website</p>
-                                </div>  
-                                <img src="Images/pdpPortfolio.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="bottom-left img-container-wrapper">
-                            <div class="img-container">  
-                                <div class="hover-text">
-                                    <p>Bachelorproject with PDP: VR Training environment for operators</p>
-                                </div>  
-                                <img src="Images/pdpVRsimulering.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="bottom-right img-container-wrapper">
-                            <div class="img-container">  
-                                <div class="hover-text">
-                                    <p>Created design documents for PDP A/S</p>
-                                </div>  
-                                <img src="Images/pdpDesignGuide.jpeg" alt="">
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="Scroller-container">
-                <div class="scroller-flexcenter">
-                    <div class="skill-tag-scroller">
-                        Skills
-                    </div>
-                    <div class="scroller">
-                        <ul class="tag-list scroller_inner">
-                            <li>Unity</li>
-                            <li>C#</li>
-                            <li>Gameplay&nbsp;Design</li>
-                            <li>Agile</li>
-                            <li>Mixed&nbsp;Reality</li>
-                            <li>Project&nbsp;Management</li>
-                            <li>UI&nbsp;Design</li>
-                        </ul>
-                    </div>
-                </div>            
-            </div>
-        </section>
-
-        <section class="stickyContent">
-            <div class="block-container">
-              <div class="sticky-container">
-                <div class="grid-container">
-                  <div class="grid-item">
-                    <img src="Images/IMG_7252.jpeg" />
+              </div>
+              <div class="top-image">
+                <div class="img-container">
+                  <div class="hover-text">
+                    <p>
+                      Through the game, children can learn skills that can be
+                      used on social media
+                    </p>
                   </div>
-                  <div class="grid-item ">
-                    <img src="Images/IMG_6483.jpeg" />
-                  </div>
-                  <div class="grid-item ">
-                    <img src="Images/IMG_0100.jpeg" />
-                  </div>
-                  <div class="grid-item ">
-                    <img src="Images/IMG_0149.jpeg" />
-                </div>
-                <div class="grid-item  centerImage">
-                    <img src="Images/iroesAR.jpeg" />
-                </div>
-                <div class="grid-item ">
-                    <img src="Images/IMG_0131.jpeg" />
-                  </div>
-                  <div class="grid-item ">
-                    <img src="Images/IMG_0130.jpeg" />
-                  </div>
-                  <div class="grid-item ">
-                    <img src="Images/IMG_0146.jpeg" />
-                  </div>
-                  <div class="grid-item ">
-                    <img src="Images/IMG_0148.jpeg" />
-                  </div>
+                  <img src="Images/legoTest.jpg" alt="" />
                 </div>
               </div>
             </div>
-          </section>
-
-          <div class="Seperator"></div>
-
-          <section class="section-about-me padding">
-            <div class="profile-picture-container">
-                <div class="profile-pic">
-                    <img src="Images/Anders_kvadrat.jpg" alt="">
-                </div>
-            </div>
-            <div class="about-me-container">
-                <div class="numbers-container">
-                    <div class="numbers">
-                        <h3 data-target="5">5+</h3>
-                        <p>Code languages</p>
-                    </div>
-                    <div class="numbers">
-                        <h3 data-target="10">10+</h3>
-                        <p>Projects</p>
-                    </div>
-                    <div class="numbers">
-                        <h3 data-target="40">40+</h3>
-                        <p>User tests</p>
-                    </div>
-                </div>
-                <p class="about-me">
-                    I am an experienced product developer with a Master's degree in Game Development and Learning Technology. Through collaborations with companies such as LEGO Games and the Moesgaard Museum, I have contributed to the creation of digital learning products from concept to finished product.
-
-                    I utilize agile methodologies to develop digital products that meet both <b>end-user needs and company requirements</b>. My combination of analytical and creative skills makes me particularly suited to guide products from ideas to concepts and finished products.
-
-                    With my extensive experience in interdisciplinary collaboration, I have facilitated workshops, led projects, and communicated effectively with stakeholders across various fields.
+            <div class="lego-bottom-part">
+              <div class="lego-bottom-part-left">
+                <img src="Images/LEGO_logo.png" alt="" />
+              </div>
+              <div class="lego-bottom-part-right">
+                <h3>DIGITAL EMPOWERMENT</h3>
+                <p>
+                  The project involved developing a digital game that taught
+                  children to navigate digital platforms safely and critically,
+                  while enhancing their digital skills and mental well-being.
                 </p>
-            </div>            
-        </section>
-        
-        
-
-        <section class="padding">
-            <div class="headline-wrapper">
-                <h3>Recommendations</h3>
+              </div>
             </div>
-            <div class="testimonials">
-                <a href="../RecommendationMoesgaard.pdf" download>
-                    <div class="box">
-                        <div class="box-top-content">
-                            <div class="box-image">
-                                <img src="https://media.licdn.com/dms/image/D4D03AQF_HWbja2wwEw/profile-displayphoto-shrink_800_800/0/1713388925498?e=1719446400&v=beta&t=N5-GI9RqSJBUh9Z_u-569fZYw8HiUFs_m1nVxq83hLY" alt="" class="img-fluid">
-                            </div>
-                            <div class="box-text">
-                                <h3>Uffe Pedersen</h3>
-                                <span>Digital projectmanager</span>
-                            </div>
-                        </div>
-                        <div class="box-bottom">
-                            <p>
-                                In his role as Scrum Master and UI Designer, Anders contributed to the development of an educational game for families at Moesgaard Museum from January 2023 to January 2024.
-                                <br>
-                                The product not only reflected great passion and thoroughness but also demonstrated a deep understanding of both users and the organization. It provided Moesgaard Museum with concrete and valuable insights for our future development of digital experiences.
-                                The collaboration has been an extremely enjoyable experience for us. Communication was excellent, processes were clear, involvement was well-balanced, and the learning process along the way was deeply engaging.
-                                Therefore, I would like to extend my warmest recommendations to Anders and am available for further elaboration over the phone if needed.
-                            </p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="../RecommendationExoplaneten.pdf" download>
-                    <div class="box">
-                        <div class="box-top-content">
-                            <div class="box-image">
-                                <img src="https://media.licdn.com/dms/image/C5603AQGJpeZfVkdG4Q/profile-displayphoto-shrink_800_800/0/1587040159779?e=1718236800&v=beta&t=88-mHnGYTne4_eG87hmQSHSVgR30T0HB8yulXPIYlrI" alt="" class="img-fluid">
-                            </div>
-                            <div class="box-text">
-                                <h3>Mimo Antabi</h3>
-                                <span>Communication coordinator</span>
-                            </div>
-                        </div>
-                        <div class="box-bottom">
-                            <p>
-                                Anders B. Øbro has been employed as a student programmer (as part of Team Talent) from October 2020 to April 2021, responsible for the development of the game 'Exoplaneten' for the University of Southern Denmark.
-                                <br>
-                                In his role as gameplay designer, Anders focuses on creating an aesthetically consistent look and game feel targeted towards the game's audience. He has contributed to the development of the game's story, polish, and has also developed a significant portion of the game's user interface.
-                                Furthermore, Anders has demonstrated high levels of engagement and motivation throughout the process, consistently meeting the demands placed upon him.
-                                Anders excels at motivating and enhancing performance across the groups he has worked with. Therefore, we would like to extend our warmest recommendations to Anders and are available for further elaboration over the phone.
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </section>
-        
-        <div class="Seperator"></div>
-
-        <section class="highlights">
-            <div class="black-background">
-                <div class="highlights-content">
-                    <h1>Highlights</h1>
-                    <br>
-                    <h2>Expertise in prototype development</h3>
-                    <br>
-                    <p>All ofmy project examples are based on iterative prototype development and testing. All prototypes start as minimally as possible, typically with paper or LEGO bricks.</p>
-                    <br>
-                    <br>
-                    <h2>Skilled in Project Management</h2>
-                    <br>
-                    <p>I have gained project management experience through roles such as Scrum Master, consultant and team coordinator, all of which have involved adapting to constraints and frequent communication with the team and stakeholders</p>
-                    <br>
-                    <br>
-                    <h2>Using Unity to bring concepts to life</h2>
-                    <br>
-                    <p>I translate concepts into digital realities through Unity. I have used unity for e.g. VR & AR projects, multiplayer games and communication with databases.</p>
+          </div>
+          <div class="horizontal-three-wrapper">
+            <div class="image-container">
+              <div class="img-container">
+                <div class="hover-text">
+                  <p>I co-created the entire project</p>
                 </div>
+                <img src="Images/legoModelling.jpg" alt="" />
+              </div>
             </div>
-        </section>
+            <div class="image-container">
+              <div class="img-container">
+                <div class="hover-text">
+                  <p>The game combines learning and entertainment</p>
+                </div>
+                <img src="Images/legoIsland.png" alt="" />
+              </div>
+            </div>
+            <div class="image-container">
+              <div class="img-container">
+                <div class="hover-text">
+                  <p>
+                    If the players are critical they can create harmony in
+                    Legoria
+                  </p>
+                </div>
+                <img src="Images/legoEnding.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="project-seperation">
+            <div class="seperation"></div>
+          </div>
+          <div class="large-full-size">
+            <div class="img-container-wrapper">
+              <div class="img-container">
+                <div class="hover-text">
+                  <p>
+                    Moesgaard Museum | 2023 project | Digital game for families
+                    with children
+                  </p>
+                </div>
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/6tctAC3cPnU"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="two-images-split">
+            <div class="img-container-wrapper">
+              <div class="img-container">
+                <div class="hover-text">
+                  <p>Project handed over in january 2024</p>
+                </div>
+                <img src="Images/momuTeam.jpg" alt="" />
+              </div>
+            </div>
+            <div class="img-container-wrapper">
+              <div class="img-container">
+                <div class="hover-text">
+                  <p>Paper-prototype before the digital product</p>
+                </div>
+                <img src="Images/momuTest.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="project-seperation">
+            <div class="seperation"></div>
+          </div>
+          <div class="grid-two-rows">
+            <div class="grid-top-left img-container-wrapper">
+              <div class="img-container">
+                <div class="hover-text">
+                  <p>Bachelorproject: Simulation based training</p>
+                </div>
+                <img id="pdpImg" src="Images/PDP.jpeg" alt="" />
+              </div>
+            </div>
+            <div class="grid-top-right img-container-wrapper">
+              <div class="img-container">
+                <div class="hover-text">
+                  <p>
+                    Developed the initial design for their upcomming website
+                  </p>
+                </div>
+                <img src="Images/pdpPortfolio.jpg" alt="" />
+              </div>
+            </div>
+            <div class="grid-bottom-left img-container-wrapper">
+              <div class="img-container">
+                <div class="hover-text">
+                  <p>
+                    Bachelorproject with PDP: VR Training environment for
+                    operators
+                  </p>
+                </div>
+                <img src="Images/pdpVRsimulering.jpg" alt="" />
+              </div>
+            </div>
+            <div class="grid-bottom-right img-container-wrapper">
+              <div class="img-container">
+                <div class="hover-text">
+                  <p>Created design documents for PDP A/S</p>
+                </div>
+                <img src="Images/pdpDesignGuide.jpeg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills-section">
+        <div class="skills-section-flexcenter">
+          <div class="skills-text-behind-scroller">Skills</div>
+          <div class="skills-scroller">
+            <ul class="tag-list scroller_inner">
+              <li>Unity</li>
+              <li>C#</li>
+              <li>Gameplay&nbsp;Design</li>
+              <li>Agile</li>
+              <li>Mixed&nbsp;Reality</li>
+              <li>Project&nbsp;Management</li>
+              <li>UI&nbsp;Design</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="gridzoom-section">
+        <div class="block-container">
+          <div class="sticky-container">
+            <div class="grid-container">
+              <div class="grid-item">
+                <img src="Images/IMG_7252.jpeg" />
+              </div>
+              <div class="grid-item">
+                <img src="Images/IMG_6483.jpeg" />
+              </div>
+              <div class="grid-item">
+                <img src="Images/IMG_0100.jpeg" />
+              </div>
+              <div class="grid-item">
+                <img src="Images/IMG_0149.jpeg" />
+              </div>
+              <div class="grid-item centerImage">
+                <img src="Images/iroesAR.jpeg" />
+              </div>
+              <div class="grid-item">
+                <img src="Images/IMG_0131.jpeg" />
+              </div>
+              <div class="grid-item">
+                <img src="Images/IMG_0130.jpeg" />
+              </div>
+              <div class="grid-item">
+                <img src="Images/IMG_0146.jpeg" />
+              </div>
+              <div class="grid-item">
+                <img src="Images/IMG_0148.jpeg" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-seperator"></div>
+
+      <section class="about-me-section padding">
+        <div class="profile-picture-container">
+          <div class="profile-pic">
+            <img src="Images/Anders_kvadrat.jpg" alt="" />
+          </div>
+        </div>
+        <div class="about-me-container">
+          <div class="numbers-container">
+            <div class="numbers">
+              <h3 data-target="5">5+</h3>
+              <p>Code languages</p>
+            </div>
+            <div class="numbers">
+              <h3 data-target="10">10+</h3>
+              <p>Projects</p>
+            </div>
+            <div class="numbers">
+              <h3 data-target="40">40+</h3>
+              <p>User tests</p>
+            </div>
+          </div>
+          <p class="about-me">
+            I am an experienced product developer with a Master's degree in Game
+            Development and Learning Technology. Through collaborations with
+            companies such as LEGO Games and the Moesgaard Museum, I have
+            contributed to the creation of digital learning products from
+            concept to finished product. I utilize agile methodologies to
+            develop digital products that meet both
+            <b>end-user needs and company requirements</b>. My combination of
+            analytical and creative skills makes me particularly suited to guide
+            products from ideas to concepts and finished products. With my
+            extensive experience in interdisciplinary collaboration, I have
+            facilitated workshops, led projects, and communicated effectively
+            with stakeholders across various fields.
+          </p>
+        </div>
+      </section>
+
+      <section class="testimonials-section padding">
+        <div class="headline-wrapper">
+          <h3>Recommendations</h3>
+        </div>
+        <div class="testimonials">
+          <a href="../RecommendationMoesgaard.pdf" download>
+            <div class="box">
+              <div class="box-top-content">
+                <div class="box-image">
+                  <img
+                    src="https://media.licdn.com/dms/image/D4D03AQF_HWbja2wwEw/profile-displayphoto-shrink_800_800/0/1713388925498?e=1719446400&v=beta&t=N5-GI9RqSJBUh9Z_u-569fZYw8HiUFs_m1nVxq83hLY"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </div>
+                <div class="box-text">
+                  <h3>Uffe Pedersen</h3>
+                  <span>Digital projectmanager</span>
+                </div>
+              </div>
+              <div class="box-bottom">
+                <p>
+                  In his role as Scrum Master and UI Designer, Anders
+                  contributed to the development of an educational game for
+                  families at Moesgaard Museum from January 2023 to January
+                  2024.
+                  <br />
+                  The product not only reflected great passion and thoroughness
+                  but also demonstrated a deep understanding of both users and
+                  the organization. It provided Moesgaard Museum with concrete
+                  and valuable insights for our future development of digital
+                  experiences. The collaboration has been an extremely enjoyable
+                  experience for us. Communication was excellent, processes were
+                  clear, involvement was well-balanced, and the learning process
+                  along the way was deeply engaging. Therefore, I would like to
+                  extend my warmest recommendations to Anders and am available
+                  for further elaboration over the phone if needed.
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <a href="../RecommendationExoplaneten.pdf" download>
+            <div class="box">
+              <div class="box-top-content">
+                <div class="box-image">
+                  <img
+                    src="https://media.licdn.com/dms/image/C5603AQGJpeZfVkdG4Q/profile-displayphoto-shrink_800_800/0/1587040159779?e=1724284800&v=beta&t=iLKM0E4arxwHHFsM2aREoC4ckcEZyWxqqOwmhpZvNTI"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </div>
+                <div class="box-text">
+                  <h3>Mimo Antabi</h3>
+                  <span>Communication coordinator</span>
+                </div>
+              </div>
+              <div class="box-bottom">
+                <p>
+                  Anders B. Øbro has been employed as a student programmer (as
+                  part of Team Talent) from October 2020 to April 2021,
+                  responsible for the development of the game 'Exoplaneten' for
+                  the University of Southern Denmark.
+                  <br />
+                  In his role as gameplay designer, Anders focuses on creating
+                  an aesthetically consistent look and game feel targeted
+                  towards the game's audience. He has contributed to the
+                  development of the game's story, polish, and has also
+                  developed a significant portion of the game's user interface.
+                  Furthermore, Anders has demonstrated high levels of engagement
+                  and motivation throughout the process, consistently meeting
+                  the demands placed upon him. Anders excels at motivating and
+                  enhancing performance across the groups he has worked with.
+                  Therefore, we would like to extend our warmest recommendations
+                  to Anders and are available for further elaboration over the
+                  phone.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <div class="section-seperator"></div>
+
+      <section class="highlights-section">
+        <div class="black-background">
+          <div class="highlights-content">
+            <h2>Highlights</h2>
+            <br />
+            <h3>Expertise in prototype development</h3>
+            <br />
+            <p>
+              All ofmy project examples are based on iterative prototype
+              development and testing. All prototypes start as minimally as
+              possible, typically with paper or LEGO bricks.
+            </p>
+            <br />
+            <br />
+            <h3>Skilled in Project Management</h3>
+            <br />
+            <p>
+              I have gained project management experience through roles such as
+              Scrum Master, consultant and team coordinator, all of which have
+              involved adapting to constraints and frequent communication with
+              the team and stakeholders
+            </p>
+            <br />
+            <br />
+            <h3>Using Unity to bring concepts to life</h3>
+            <br />
+            <p>
+              I translate concepts into digital realities through Unity. I have
+              used unity for e.g. VR & AR projects, multiplayer games and
+              communication with databases.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
-</body>
+  </body>
 </html>
