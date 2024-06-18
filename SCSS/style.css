@@ -184,6 +184,10 @@ body {
     width: 100%;
   }
 }
+section.horizontal {
+  overflow-y: hidden;
+}
+
 .horizontal-section > div {
   height: calc(100dvh - 80px);
 }
