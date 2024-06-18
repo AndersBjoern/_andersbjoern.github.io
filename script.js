@@ -147,52 +147,71 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Kør koden kun hvis skærmen er en tablet eller større
-  if (isComputer()) {
-    // grid zoom effekt
-    var gridItems = document.querySelectorAll(".grid-item");
-    var gridContainer = document.querySelector(".sticky-container");
-    var blockContainer = document.querySelector(".block-container");
-
-    // Gå igennem hver grid-item
-    gridItems.forEach(function (item, index) {
-      // Beregn transform-værdier baseret på placering i forhold til centerItem
-      var translateX, translateY;
-      if (index % 3 < 1) {
-        // Venstre side
-        translateX = "-100vw";
-      } else if (index % 3 > 1) {
-        // Højre side
-        translateX = "100vw";
-      } else {
-        // Midterste kolonne
-        translateX = "0";
+  function initializeGridEffect() {
+    // Fjern kun de ScrollTriggers, der er oprettet for grid-effekten
+    ScrollTrigger.getAll().forEach((trigger) => {
+      if (
+        trigger.vars.trigger === document.querySelector(".sticky-container")
+      ) {
+        trigger.kill();
       }
-
-      if (index < 3) {
-        // Øverste række
-        translateY = "-100vh";
-      } else if (index > 5) {
-        // Nederste række
-        translateY = "100vh";
-      } else {
-        // Midterste række
-        translateY = "0";
-      }
-
-      // Opret en ScrollTrigger for hver grid-item
-      gsap.to(item, {
-        // Når grid-item er 100% synlig i viewporten
-        scrollTrigger: {
-          trigger: gridContainer,
-          start: "center center", // Start trigger, når toppen af centerItem er i midten af viewporten
-          endTrigger: blockContainer,
-          end: "bottom center", // Slut trigger, når bunden af centerItem er i midten af viewporten
-          scrub: true, // Gør animationen blød
-        },
-        scale: 3.7,
-        x: translateX,
-        y: translateY,
-      });
     });
+
+    // Kør koden kun hvis skærmen er en tablet eller større
+    if (isComputer()) {
+      // grid zoom effekt
+      var gridItems = document.querySelectorAll(".grid-item");
+      var gridContainer = document.querySelector(".sticky-container");
+      var blockContainer = document.querySelector(".block-container");
+
+      // Gå igennem hver grid-item
+      gridItems.forEach(function (item, index) {
+        // Beregn transform-værdier baseret på placering i forhold til centerItem
+        var translateX, translateY;
+        if (index % 3 < 1) {
+          // Venstre side
+          translateX = "-100vw";
+        } else if (index % 3 > 1) {
+          // Højre side
+          translateX = "100vw";
+        } else {
+          // Midterste kolonne
+          translateX = "0";
+        }
+
+        if (index < 3) {
+          // Øverste række
+          translateY = "-100vh";
+        } else if (index > 5) {
+          // Nederste række
+          translateY = "100vh";
+        } else {
+          // Midterste række
+          translateY = "0";
+        }
+
+        // Opret en ScrollTrigger for hver grid-item
+        gsap.to(item, {
+          // Når grid-item er 100% synlig i viewporten
+          scrollTrigger: {
+            trigger: gridContainer,
+            start: "center center", // Start trigger, når toppen af centerItem er i midten af viewporten
+            endTrigger: blockContainer,
+            end: "bottom center", // Slut trigger, når bunden af centerItem er i midten af viewporten
+            scrub: true, // Gør animationen blød
+            id: `grid-trigger-${index}`, // Unik id for hver trigger
+          },
+          scale: 3.7,
+          x: translateX,
+          y: translateY,
+        });
+      });
+    }
   }
+
+  // Initial kald
+  initializeGridEffect();
+
+  // Lyt efter resize-begivenhed og genindlæs effekten
+  window.addEventListener("resize", initializeGridEffect);
 });
