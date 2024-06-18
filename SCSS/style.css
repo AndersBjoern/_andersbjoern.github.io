@@ -211,6 +211,7 @@ section.horizontal {
 }
 .horizontal-section .large-full-size {
   width: 90vw;
+  min-width: 550px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -396,19 +397,19 @@ section.horizontal {
   .horizontal .horizontal-section > div:nth-child(2) {
     margin-left: 0;
   }
-  .lego-wrapper .top-image {
+  .horizontal-section .lego-wrapper .lego-images {
     display: block;
   }
-  .lego-wrapper .top-image .top-image {
+  .horizontal-section .lego-wrapper .lego-images .top-image {
     width: 100%;
     height: calc(50% - 20px);
     margin-bottom: 40px;
   }
-  .lego-wrapper .lego-bottom-part-left img {
+  .horizontal-section .lego-wrapper .lego-bottom-part .lego-bottom-part-left img {
     max-width: 100px;
     max-height: 100px;
   }
-  .lego-wrapper .lego-bottom-part-right p {
+  .horizontal-section .lego-wrapper .lego-bottom-part .lego-bottom-part-right p {
     font-size: 12px;
   }
 }

@@ -23,6 +23,7 @@ section.horizontal {
   padding-left: 5vw;
   .large-full-size {
     width: 90vw;
+    min-width: 550px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -221,22 +222,26 @@ section.horizontal {
     margin-left: 0;
   }
 
-  .lego-wrapper {
-    .top-image {
-      display: block;
-      .top-image {
-        width: 100%;
-        height: calc(50% - 20px);
-        margin-bottom: 40px;
+  .horizontal-section {
+    .lego-wrapper {
+      .lego-images {
+        display: block;
+        .top-image {
+          width: 100%;
+          height: calc(50% - 20px);
+          margin-bottom: 40px;
+        }
       }
-    }
-    .lego-bottom-part-left img {
-      max-width: 100px;
-      max-height: 100px;
-    }
+      .lego-bottom-part {
+        .lego-bottom-part-left img {
+          max-width: 100px;
+          max-height: 100px;
+        }
 
-    .lego-bottom-part-right p {
-      font-size: 12px;
+        .lego-bottom-part-right p {
+          font-size: 12px;
+        }
+      }
     }
   }
 }
