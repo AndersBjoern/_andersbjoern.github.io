@@ -91,7 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
-  /*
   let video = document.getElementById("DigitalEmpowermentVideo");
 
   ScrollTrigger.create({
@@ -103,8 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
     onEnterBack: () => video.play(),
     onLeaveBack: () => video.pause(),
   });
-
-  */
 
   const scrollers = document.querySelectorAll(".skills-scroller");
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -213,5 +210,8 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeGridEffect();
 
   // Lyt efter resize-begivenhed og genindlæs effekten
-  window.addEventListener("resize", initializeGridEffect);
+  window.addEventListener("resize", () => {
+    initializeGridEffect();
+    ScrollTrigger.refresh();
+  });
 });

@@ -171,6 +171,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: black;
   }
   .videoplayer-section-wrapper {
     width: 100%;
@@ -179,10 +180,53 @@ body {
     padding: 5px 5px 0px 5px;
     border-radius: 12px;
   }
-  .videoplayer {
+  .videoplayer,
+  .videoplayer video {
     aspect-ratio: 16/9;
     width: 100%;
   }
+  /*
+  .videoplayer-section {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+  }
+
+  .videoplayer-section-wrapper {
+    width: 100%;
+    background-color: #e8e7ed;
+    border-radius: 20px;
+    border-radius: 12px;
+  }
+
+  .videoplayer {
+    position: relative;
+    width: 100%;
+  }
+
+  .videoplayer video {
+    aspect-ratio: 16/9;
+    width: 100%;
+  }
+
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(
+      0,
+      0,
+      0,
+      1
+    ); 
+    pointer-events: none; 
+  }
+  */
 }
 section.horizontal {
   overflow: hidden;
@@ -215,6 +259,12 @@ section.horizontal {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 20px;
+}
+.horizontal-section .large-full-size video {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
 }
 .horizontal-section .lego-wrapper {
   width: 90vw;
