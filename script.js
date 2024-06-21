@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const contrastColor =
     getComputedStyle(root).getPropertyValue("--contrast-color");
 
-  ScrollTrigger.create({
+  const horizontalScrollTrigger = ScrollTrigger.create({
     trigger: ".horizontal",
     start: "top 0%",
     end: () => `+=${getScrollAmount() * -1}`,
@@ -212,6 +212,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Lyt efter resize-begivenhed og genindlæs effekten
   window.addEventListener("resize", () => {
     initializeGridEffect();
-    ScrollTrigger.refresh();
+    horizontalScrollTrigger.refresh();
   });
 });
